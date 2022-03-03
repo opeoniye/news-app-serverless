@@ -6,5 +6,5 @@ export const authConfig = {
   // NEWS: Create an Auth0 application and copy values from it into this map.
   domain: 'opeoniye.us.auth0.com',                // Auth0 domain
   clientId: 'QmuSIwWGAWLieiJlP6gS4ci8jqnUePsB',   // Auth0 client id
-  callbackUrl: 'http://localhost:3000/callback'
+  callbackUrl: 'https://news-bams.netlify.app/callback'
 }
