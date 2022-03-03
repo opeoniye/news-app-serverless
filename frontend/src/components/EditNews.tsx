@@ -4,7 +4,7 @@ import { Form, Button, Header, Grid, Loader } from 'semantic-ui-react'
 import Auth from '../auth/Auth'
 import { NewsItem } from '../types/News'
 import Iroyin from '../types/onenews'
-import { getNewsFeedView, editNews, getUploadUrl, uploadFile } from '../api/news-api'
+import { editNews, getUploadUrl, uploadFile } from '../api/news-api'
 import { apiEndpoint } from '../config'
 import Axios from 'axios'
 
@@ -124,7 +124,7 @@ export class EditNews extends React.PureComponent<EditNewsProps, EditNewsState> 
   async componentDidMount() {
     const idToken = this.props.auth.getIdToken()
     const newsid = this.props.match.params.newsId
-    const response = await Axios.get(`${apiEndpoint}/news/${newsid}`, {
+    await Axios.get(`${apiEndpoint}/news/${newsid}`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${idToken}`

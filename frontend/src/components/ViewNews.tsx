@@ -60,7 +60,7 @@ export class ViewNews extends React.PureComponent<ViewNewsProps, ViewNewsState> 
   async componentDidMount() {
     const idToken = this.props.auth.getIdToken()
     const newsid = this.props.match.params.newsId
-    const response = await Axios.get(`${apiEndpoint}/news/${newsid}`, {
+    await Axios.get(`${apiEndpoint}/news/${newsid}`, {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${idToken}`
